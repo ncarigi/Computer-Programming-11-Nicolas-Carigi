@@ -12,18 +12,28 @@ public class School {
 
     // Deletes a teacher from the list of teachers
     public String deleteTeacher(int e) {
-        String dt = teachers.get((e - 1)).getFirstName() + " " + teachers.get((e - 1)).getLastName() + " has been removed\n";
+        // Get the details of the teacher to be deleted
+        String deletedTeacher = teachers.get((e - 1)).getFirstName() + " " + teachers.get((e - 1)).getLastName() + " has been removed\n";
+
+        // Remove the teacher from the list
         teachers.remove((e - 1));
-        return dt;
+
+        // Return the details of the deleted teacher
+        return deletedTeacher;
     }
 
     // Shows all the teachers
     public String showTeachers() {
-        String at = "";
+        StringBuilder allTeachers = new StringBuilder();
+
+        // Iterate over the teachers list
         for (int i = 0; i < teachers.size(); i++) {
-            at = at + "[" + (i + 1) + "] " + teachers.get(i).toString();
+            // Append the details of each teacher to the StringBuilder
+            allTeachers.append(teachers.get(i).toString());
         }
-        return "Showing all teachers:\n" + at + "\n";
+
+        // Return the formatted string representation of all teachers
+        return "Showing all teachers:\n" + allTeachers + "\n";
     }
 
     // Adds a student to the list of students
@@ -33,18 +43,28 @@ public class School {
 
     // Deletes a student from the list of students
     public String deleteStudent(int e) {
-        String ds = students.get((e - 1)).getFirstName() + " " + students.get((e - 1)).getLastName() + " has been removed\n";
+        // Get the details of the student to be deleted
+        String deletedStudent = students.get((e - 1)).getFirstName() + " " + students.get((e - 1)).getLastName() + " has been removed\n";
+
+        // Remove the student from the list
         students.remove((e - 1));
-        return ds;
+
+        // Return the details of the deleted student
+        return deletedStudent;
     }
 
     // Shows all the students
     public String showStudents() {
-        String as = "";
+        StringBuilder allStudents = new StringBuilder();
+
+        // Iterate over the students list
         for (int i = 0; i < students.size(); i++) {
-            as = as + "[" + (i + 1) + "] " + students.get(i).toString();
+            // Append the details of each student to the StringBuilder
+            allStudents.append(students.get(i).toString());
         }
-        return "Showing all Students:\n" + as + "\n";
+
+        // Return the formatted string representation of all students
+        return "Showing all Students:\n" + allStudents + "\n";
     }
 
     // Fields School class
@@ -62,6 +82,7 @@ public class School {
     // String representation of the School object
     @Override
     public String toString() {
+        // Return the formatted string representation of the School object
         return "Name: " + this.name + "\t Address: " + this.address + "\t Capacity: (" + students.size() + "/" + this.capacity + ")\n";
     }
 

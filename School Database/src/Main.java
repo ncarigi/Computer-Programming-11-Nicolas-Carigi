@@ -1,10 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-        //System.out.println(Teacher);
 
         School school1 = new School("Sesame High School", "372 Sesame Street, Vancouver, BC", 420);
-
-        System.out.println(school1);
 
         //Add 10 students to student list
         school1.addStudent("Sebastian", "Green", 8);
@@ -23,6 +20,8 @@ public class Main {
         school1.addTeacher("Isabella", "Miller", "History");
         school1.addTeacher("Big", "Bird", "English");
         school1.addTeacher("Carter", "Wright", "Math");
+
+        System.out.println(school1);
 
         //display both lists
         System.out.println(school1.showStudents());
